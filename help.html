@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html><head>
+<title>Bitmap Image Tool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+
+<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />                  <!-- KICKSTART -->
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />                          <!-- CUSTOM STYLES -->
+	
+<!-- ===================================== END HEADER ===================================== -->
+
+
+<div class="grid">
+    <br><center><form action="index.html"><input type="submit" value="Back"/></form></center></head><br>
+    <h3>Video Tutorial</h3>
+    You can check this (absolutely not comprehensive) tutorial as an intro:
+    <br>
+    <iframe width="905" height="509" src="https://www.youtube.com/embed/MieqMg56DEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+    </iframe>
+    <h3>Quick Use</h3>
+    <br><b>Exporting an image to bitplanes:</b>
+    <ul>
+        <li>Drag'n drop your source image at the top of the page, in the "drag'n drop an image here" panel</li>
+        <li>Go to the <b>Bitplane Export</b> section at the bottom of the page</li>
+        <li>Click <b>Save Bitplanes</b> (and tick <b>interleave</b> before if you need interleaved bitplanes)</li>
+    </ul>    
+    <br><b>Exporting an image to multiple Bobs:</b>
+    <ul>
+        <li>Drag'n drop your source image at the top of the page, in the "drag'n drop an image here" panel</li>
+        <li>Go to the <b>Bob Export</b> section at the bottom of the page</li>
+        <li>The <b>name prefix</b> box is pre-filled with your image's name. Change that name if you want another label for your Bobs. This label is used in the exported files as a prefix for each Bob's name, as follows: <i>name prefix_Bob number</i>.</li>
+        <li>The <b>width</b> and <b>height</b> boxes are pre-filled with your image's size (which would lead to a single Bob for your whole image). Enter the dimensions of your Bobs grid. If your Bobs are not organized in a grid and need individual sizes, you're out of the <b>Quick Use</b> scenario, but don't worry, we got you coverd with the <b>Grab</b> feature (see below).</li>
+        <li>In the <b>count</b> box, indicate how many Bobs of the given width and height you want to export. If this count exceeds the size of the image, it will be automatically clamped to the highest possible value.</li>
+        <li>Click the <b>Preview</b> button to see your list of Bobs (yes, within the green cells), fine tune your <b>width</b>, <b>height</b> and <b>count</b> values if needed.</li>
+        <li>The other options are easy to understand. Just click <b>Save</b> when you're happy.</li>
+    </ul>    
+    <br><b>Exporting an image to multiple Sprites:</b>
+    <ul>
+        <li>Drag'n drop your source image at the top of the page, in the "drag'n drop an image here" panel</li>
+        <li>Go to the <b>Sprite Export</b> section at the bottom of the page</li>
+        <li>The <b>name prefix</b> box is pre-filled with your image's name. Change that name if you want another label for your Sprites. This label is used in the exported files as a prefix for each Sprite's name, as follows: <i>name prefix_Sprite number</i>.</li>
+        <li>The <b>height</b> box is pre-filled with your image's height (width is forced to 16 pix). Enter the height of your Sprites grid. If your Spritess are not organized in a grid and need individual sizes, you're out of the <b>Quick Use</b> scenario, but don't worry, we got you coverd with the <b>Grab</b> feature (see below).</li>
+        <li>In the <b>count</b> box, indicate how many Sprites of the given height you want to export. If this count exceeds the size of the image, it will be automatically clamped to the highest possible value.</li>
+        <li>Click the <b>Preview</b> button to see your list of Sprites (yes, within the green cells), fine tune your <b>height</b> and <b>count</b> values if needed.</li>
+        <li>The other options are easy to understand. Just click <b>Save</b> when you're happy.</li>
+    </ul>
+    <br>...and you're done with the <b>Quick Use</b> section, have fun or stay tuned for further details...
+    <hr><h3>Keyboard Shortcuts</h3>
+    <ul>
+        <li>0 : Exit grab mode</li>
+        <li>1 : Grab mode, 1px grid</li>
+        <li>2 : Grab mode, 2px grid</li>
+        <li>3 : Grab mode, 4px grid</li>
+        <li>4 : Grab mode, 8px grid</li>
+        <li>5 : Grab mode, 16px grid</li>
+        <li>6 : Grab mode, 32px grid</li>
+        <li>- : zoom out</li>
+        <li>+ : zoom in</li>
+        <li>s : jump to Sprite export section</li>
+        <li>b : jump to Bob export section</li>
+        <li>w : jump to Work Bench section</li>
+        <li>ESC : cancel current operation / close popup boxes</li>
+    </ul>    
+	<br>
+    <hr><h3>The Grab mode</h3>
+    <ul>
+        <li>In the <b>Work Bench</b> section, use the <b>grab</b> combo-box to select a grid alignment for selection.</li>
+        <li>Select a zone in the image using the mouse (mouse down - drag - mouse up).</li>
+        <li>A grab box should appear, proposing you the following options:</li>
+        <ul>- <b>Export Sprites</b> will go to the <b>Sprite Export</b> section and fill the <b>height</b> and <b>count</b> info according to your selection. You can still change the height (remember sprites width is always 16), and the count will be updated automatically to fit your selection. Click <b>Preview</b> to see the result, and click <b>Save</b> when you're happy.</ul>
+        <ul>- <b>Export Bobs</b> will go to the <b>Bob Export</b> section and fill the <b>width</b>, <b>height</b> and <b>count</b> info according to your selection. You can still change the width & height, and the count will be updated automatically to fit your selection. Click <b>Preview</b> to see the result, and click <b>Save</b> when you're happy.</ul>
+        <ul>- <b>Grab Frame</b> Is a way to group together several images that don't necessarily have the same size.</ul>
+        <li>You can press the escape key at anytime to exit the grab mode</li>
+        <li>Yes, you can use the grab mode to export your image as a single Bob and get the bitplanes for your image. It's the same format, obviously.</li>
+    </ul>
+    <hr><h3>The "Original Image" Section</h3>
+	<br>
+    <ul>
+        <li>Drag'n drop your source image at the top of the page, in the "drag'n drop an image here" panel</li>
+        <li>The 'Target Platform' combo-box works only for Amiga OCS for the moment. You can ignore it</li>
+        <li>The 'HTML to Platform color conversion' combo-box allows you to choose how the image colors are converted to the OCS palette. Here's the thing: HTML is using 8 bits per component (256 possibilities), while OCS has 4 (16 possibilities). In hexadecimal, means we need to convert a 2 digit numner #xx into a 1 digit number #x</li>
+        <ul>- Clamp Color will just cut the least significant bits (4 bits right shift), so #E9 will become #E for example.</ul>
+        <ul>- Nearest Color will get to the nearest color: #E9 will become #F (because 9 is closer to 16 than to 0, so we round up). #E3 will become #E because 3 is closer to 0. Of course, it means that #FA for example will be remapped to #F as there's no value superior to F. Just try both options, you'll barely notice the difference.</ul>
+        <li>Below, you'll see the converted image (Cropped, using 12 bits Amiga colors).</li>
+        <li>Everything you change in this section will reset the other sections (palette will be rebuilt from the pixels selected by the crop)</li>
+    </ul>    
+	<br>
+    <hr><h3>The "Work Bench" section</h3>
+	<br>
+    <ul>
+        <li>The left part of this section contains your palette:</li>
+        <ul>- Drag'n drop color entries to change their index in the palettte.</ul>
+        <ul>- Click on a color to change its RGB values.</ul>
+        <ul>- Two buttons allow you to sort the palette by ascending or descending luminosity. Luminosity is calculated using the standard formula: 0.2126 * R + 0.7152 * G + 0.0722 * B</ul>
+        <ul>- A button allows you to load a previously saved palette (useful to make sure exports from different images share the same palette). Pixels will be assigned the nearest value in the new palette. If you import a .bin, the palette must have been exported without the color count (<b>Include color count</b> checkbox NOT ticked). If you choose .asm or clipboard, the palette must be a series of dc.w (same format as the palettes saved by this tool)</ul>
+        <ul>- The "lock color 0" checkbox makes sure no pixel is assigned palette index 0. This is useful for example when exporting sprites that have no transparent pixels. When checked, color 0 will NOT be exported when saving the palette (first color in the palette will be color1)</ul>
+        <li>The right part of this section contains the image:</li>
+        <ul>- Sliders allow you to play with zoom and color cycling (no consequence on the image, just for editor visualization)</ul>
+        <ul>- The <b>show</b> combo-box will draw lines to show you your current selection as sprites or bobs</ul>
+        <ul>- The <b>grab</b> combo-box is already described above in <b>The Grab mode</b></ul>
+    </ul>    
+    <hr><h3>The "Bitplane Export" section</h3>
+	<br>
+    <ul>
+        <li>Click "Save Bitplanes" to save the RAW bitplanes to a file (classic Amiga image export)</li>
+            <ul>- The palette is not included.</ul>
+            <ul>- RAW bitplanes are saved one after another, except if you ticked the "Interleave bpl" checkbox. In that case, bitplanes will by saved for each line</ul>
+            <ul>- Untick one of the "bpl" checkboxes to disable export for the given bitplane</ul>
+        <li>Click "Save RGB" to save a 12 bit per pixel image (stored using 16 bits per pixels, so the 4 top bits are empty)</li>
+        <li>Click "Save Indexes" to export each pix of the image as its 4bit index into the palette (works only for 16 colors or less images, 2indexes saved per byte)</li>
+    </ul>
+    <hr><h3>The "Palette Export" section</h3>
+    <ul>
+        <li>The palette export options are pretty self-explanatory</li>
+        <li><i>export as</i> <b>.asm</b> will write the palette as a list of <i>DC.W</i> values in a .asm file.</li>
+        <li><i>export as</i> <b>.bin</b> will write the palette as a list of words in a .bin file. If <b>include color count</b> is ticked, the palette will be preceeded by a 16 bit color count.</li>
+        <li><i>export as</i> <b>.c</b> will write the palette as an unsigned short C array in a .c file.</li>
+        <li><i>export as</i> <b>copperlist $180</b> will write the palette as a copperlist starting at $180 within a .asm file.</li>
+        <li><i>export as</i> <b>copperlist $1a0</b> will write the palette as a copperlist starting at $1a0 within a .asm file (useful for sprites).</li>
+    </ul>
+    <hr><h3>The "Sprite Export" section</h3>
+    <br>
+        Most of it is explained above, see <b>Quick Use</b>. Here's some extra info:
+        <ul>
+            <li>The <b>export as</b> drop-down allows to choose between <i>'single .asm'</i> (1 single .asm file is generated containing all Sprites), <i>'single .bin'</i> (1 single .bin file containing all Sprites + 1 FAT file), <i>'single .c'</i> (1 single .c file is generated containing all Sprites, stored as 1 unsigned short array per Sprite), or <i>'multiple .bin'</i> (1 binary file is exported per sprite).</li>
+            <li>The <b>save to</b> drop-down allows to choose between <i>'clipboard'</i> (string exported directly to the clipboard so that you can paste it in your code) or <i>'file'</i>. Note that export to clipboard is not allowed for binary formats (works only for .c and .asm, not .bin).</li>
+            <li>The <b>include palette</b> checkbox will work only if you selected <i>single .asm'</i> export. In that case, you will find the palette in the exported .asm file.</li>
+            <li>The <b>include header words</b> will include the POS & CTRL words at the beginning of each sprite data. To compute these words, values will be taken from:</li>
+            <ul>- <b>screen X</b> and <b>screen Y</b>, the Sprite's desired screen position. When several sprites are exported together, <b>screen X</b> and <b>screen Y</b> represent the coordinates of the top-left sprite (other sprites coords will be offsetted as in your source image).</ul>
+            <ul>- <b>HSTART ofs</b> and <b>VSTART ofs</b> are used to translate sprite coordinates to playfield coordinates (compulsory to compute control words). Default values (128,44) are pre-filled for the good old 320x256 OCS mode, but you can change them if needed.</ul>
+            <li>The <b>skip empty</b> checkbox will avoid saving a Sprite with no data (sprites containing only zeroes will not be exported).</li>
+            <li>If your palette contains more than 4 colors (up to 16), attached sprites will be saved. The attached sprites will have the suffix <i>'_attached'</i> in their names</li>
+        </ul>    
+    <hr><h3>The "Bob Export" section</h3>
+    <br>
+    Most of it is explained above, see <b>Quick Use</b>. Here's some extra info:
+    <ul>
+        <li>The <b>export as</b> drop-down allows to choose between <i>'single .asm'</i> (1 single .asm file is generated containing all Bobs), or <i>'single .bin'</i> (1 binary file containing all Bobs + 1 FAT file indicating the offset of each Bob in the binary file), <i>'single .c'</i> (1 single .c file is generated containing all Bobs, stored as 1 unsigned char array per Bob ), or <i>'multiple .bin'</i> (1 binary file is exported per Bob).</li>
+        <li>The <b>save to</b> drop-down allows to choose between <i>'clipboard'</i> (string exported directly to the clipboard so that you can paste it in your code) or <i>'file'</i>. Note that export to clipboard is not allowed for binary formats (works only for .c and .asm, not .bin).</li>
+        <li>The <b>include palette</b> checkbox will work only if you selected <i>single .asm'</i> export. In that case, you will find the palette in the exported .asm file.</li>
+        <li>The <b>interlace bitplanes</b> will do what you expect it to do: lines will be exported for every bitplane before going to the next line.</li>
+        <li>The <b>skip empty</b> checkbox will avoid saving a Bob with no data (Bobs containing only zeroes will not be exported).</li>
+    </ul>    
+    <hr><h3>Grabbed Frames</h3>
+    <ul>
+        <li>When choosing <b>Grab Frame</b>, you see a list of <b>Grabbed Frames</b> appear below the image in the <b>Work Bench</b>. This is useful to group together several images that don't necessarily have the same size. This feature is still a bit limited, not sure people need it so I put less effort on it. Don't hesitate to ask for more (comment on pouet for example).</li>
+        <li>When you're done grabbing all your frames, you may export them as Sprites or Bobs.</li>
+        <ul> - Export will be automatically performed as a single .asm file (no binary option yet), and palette and control words will be included in the .asm file.</ul>
+        <ul> - Export franes to Bobs is not yet functional. </ul>
+    </ul>
+	<br>
+    <br><center><form action="index.html"><input type="submit" value="Back"/></form></center></head><br>
+        
+</div><!-- END GRID -->
+
+<!-- ===================================== START FOOTER ===================================== -->
+<div class="clear"></div>
+<div id="footer">
+All bugs by Soundy / The Deadliners.
+</div></div>
+
+</body></html>
