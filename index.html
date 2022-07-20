@@ -149,6 +149,10 @@
                     <option value=sprt1C>single .c</option>
                     <option value=sprtBin>multiple .bin</option>
                 </select>
+                &nbsp;save as: <select id="sprtSaveAs" onchange="onSprtExportMode()">
+                  <option value=sprt_c_types>unsigned short</option>
+                  <option value=sprt_amiga_types>word</option>
+              </select>
                 &nbsp;save to: <select id="sprtSaveTo" onchange="onSprtExportMode()">
                     <option value=sprt_clipBoard>clipboard</option>
                     <option value=sprt_file>file</option>

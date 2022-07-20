@@ -29,7 +29,7 @@ function genSpriteCtrlWords(x,y,h, attached) {
 	return {pos:pos, ctl:ctl};
 }
 
-
+var xtypes="unsigned short";
 
 
 function getChunkyPix(x,y) {
@@ -121,6 +121,10 @@ function saveSprite(_saveWindow) {
 		else
 			save2Clipboard = true;
 	}
+	
+	var types2 = document.getElementById("sprtSaveAs").value;
+	if(types2 === "sprt_amiga_types")xtypes="word";
+
 
 	var sprtName = _saveWindow.label;
 
@@ -179,8 +183,8 @@ function saveSprite(_saveWindow) {
 			exportNumber++;
 			var sprtStr = thisName;
 			var sprtAttachedStr = thisName + "_attached";
-			var sprtCStr = "unsigned short " + thisName + "[] = {\n";
-			var sprtAttachedCStr = "unsigned short " + thisName + "_attached[] = {\n";
+			var sprtCStr = xtypes+" " + thisName + "[] = {\n";
+			var sprtAttachedCStr = xtypes+" " + thisName + "_attached[] = {\n";
 			if (coveredWidth > 0)
 				allExported += ", ";
 			allExported += sprtStr + ", " + sprtAttachedStr;
@@ -277,7 +281,7 @@ function saveSprite(_saveWindow) {
 				data[writeIndex++] = w;
 				w = writeSpr0High & 0xff;
 				sprtStr += TwoCharStringHEX(w)+"\n";
-				sprtCStr += TwoCharStringHEX(w)+"\n";
+				sprtCStr += TwoCharStringHEX(w)+",\n";
 				data[writeIndex++] = w;
 
 				sprtAttachedStr += "\tdc.w\t";
@@ -296,7 +300,7 @@ function saveSprite(_saveWindow) {
 				data1[writeIndex1++] = w;
 				w = writeSpr1High & 0xff;
 				sprtAttachedStr += TwoCharStringHEX(w)+"\n";
-				sprtAttachedCStr += TwoCharStringHEX(w)+"\n";
+				sprtAttachedCStr += TwoCharStringHEX(w)+",\n";
 				data1[writeIndex1++] = w;
 			}
 			if (saveSession) {
@@ -312,7 +316,13 @@ function saveSprite(_saveWindow) {
 							asmStr += sprtAttachedStr + "\n";
 						asmStr += ";========================================\n\n";
 					} else if (xportC) {
-						cStr += sprtCStr + "};\n";
+						// a function to remove the last ,
+						var last_comma=sprtCStr.lastIndexOf(',');
+						sprtCStr=sprtCStr.slice(0,last_comma) +
+						sprtCStr.slice(last_comma + 1);
+
+
+						cStr += sprtCStr ;
 						if (attached)
 							cStr += sprtAttachedCStr + "\n";
 						cStr += "};\n//========================================\n\n";
@@ -359,7 +369,7 @@ if (saveSession)
 		}
 	} if (xportC) {
 		if (includePal) {
-			var palStr = "unsigned short " + sprtName + "_palette[] = {\n";			
+			var palStr = xtypes+" " + sprtName + "_palette[] = {\n";			
 			cStr += savePaletteC(palStr) + "};\n\n";
 		}
 		if (save2Clipboard) {
@@ -621,7 +631,7 @@ function saveBobs(_saveWindow) {
 		}
 	} else if (xportMode === XPORT_C){
 		if (includePal) {
-			var palStr = "unsigned short " + bobName + "_palette[] = {\n";			
+			var palStr = xtypes+" " + bobName + "_palette[] = {\n";			
 			CStr += savePaletteC(palStr) + "};\n\n";
 		}
 		if (save2Clipboard) {
